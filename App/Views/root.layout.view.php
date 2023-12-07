@@ -17,34 +17,48 @@
     <link rel="stylesheet" href="public/css/styl.css">
     <script src="public/js/script.js"></script>
 </head>
-<body>
-<nav class="navbar navbar-expand-sm bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="<?= $link->url("home.index") ?>">
-            <img src="public/images/vaiicko_logo.png" title="<?= \App\Config\Configuration::APP_NAME ?>"
-                 title="<?= \App\Config\Configuration::APP_NAME ?>">
-        </a>
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="<?= $link->url("home.contact") ?>">Kontakt</a>
-            </li>
-        </ul>
-        <?php if ($auth->isLogged()) { ?>
-            <span class="navbar-text">Prihlásený používateľ: <b><?= $auth->getLoggedUserName() ?></b></span>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= $link->url("auth.logout") ?>">Odhlásenie</a>
-                </li>
-            </ul>
-        <?php } else { ?>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= \App\Config\Configuration::LOGIN_URL ?>">Prihlásenie</a>
-                </li>
-            </ul>
-        <?php } ?>
+<header class="topnav">
+    <div class="row">
+        <div id="top-links">
+            <div class="initCont">
+                <div class="glitch-wrapper">
+                    <a class="navbar-brand" href="<?= $link->url("home.index") ?>">
+                        <img id="header-logo" src="public/images/img/logo.png" alt="..." title="<?= \App\Config\Configuration::APP_NAME ?>"
+                             title="<?= \App\Config\Configuration::APP_NAME ?>">
+                    </a>
+                    <div class="glitch" data-text="Postcool">Postcool</div>
+                </div>
+                <div class="responsive-mobile-visible responsive-all-hidden box-account-links-trigger-wrap">
+                    <div class="box-account-links-trigger"></div>
+                </div>
+                <ul class="menu responsive-mobile-hidden box-account-links list-inline list-reset ">
+                    <li>
+                        <a class="icon-account-login" href="<?= \App\Config\Configuration::LOGIN_URL ?>" title="Login" data-testid="signin" rel="nofollow">
+                            <span>Login</span>&nbsp;
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Our Museum</a>
+                            <a class="dropdown-item" href="#">New Collection</a>
+                            <a class="dropdown-item" href="<?= $link->url("home.shop") ?>">Shop Postcards</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $link->url("home.contact") ?>">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-</nav>
+</header>
+<body>
 <div class="container-fluid mt-3">
     <div class="web-content">
         <?= $contentHTML ?>
