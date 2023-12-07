@@ -5,7 +5,7 @@
 /** @var \App\Core\LinkGenerator $link */
 ?>
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="en">
 <head>
     <title><?= \App\Config\Configuration::APP_NAME ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -48,7 +48,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="<?= $link->url("home.admin") ?>">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= $link->url("home.contact") ?>">Contact Us</a>

@@ -23,43 +23,43 @@
 
 
 <form method="post" action="<?= $link->url('shop') ?>" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?= @$data['postcard_data']?->getId() ?>">
+    <input type="hidden" name="id" value="<?= @$data['postcards']?->getId() ?>">
 
 
 <label for="name">Name: </label>
 <div>
     <input type="string" class="form-control box" name="name" id="name" placeholder="Enter name"
-           value="<?= @$data['postcard_data']?->getName() ?>">
+           value="<?= @$data['postcards']?->getName() ?>">
 </div>
 
 <label for="address_line1">Address Line 1: </label>
 <div>
     <input type="string" class="form-control box" name="address_line1" id="address_line1" placeholder="Enter address line 1"
-           value="<?= @$data['postcard_data']?->getAddressLine1() ?>">
+           value="<?= @$data['postcards']?->getAddressLine1() ?>">
 </div>
 
 <label for="address_line2">Address Line 2: </label>
 <div>
     <input type="string" class="form-control box" name="address_line2" id="address_line2" placeholder="Enter address line 2"
-           value="<?= @$data['postcard_data']?->getAddressLine2() ?>">
+           value="<?= @$data['postcards']?->getAddressLine2() ?>">
 </div>
 
 <label for="city">City: </label>
 <div>
     <input type="string" class="form-control box" name="city" id="city" placeholder="Enter city"
-           value="<?= @$data['postcard_data']?->getCity() ?>">
+           value="<?= @$data['postcards']?->getCity() ?>">
 </div>
 
 <label for="zip_code">Zip code: </label>
 <div>
     <input type="string" class="form-control box" name="zip_code" id="zip_code" placeholder=""
-           value="<?= @$data['postcard_data']?->getZipCode() ?>">
+           value="<?= @$data['postcards']?->getZipCode() ?>">
 </div>
 
 <label for="postcard_message">Your message: </label>
 <div>
     <input type="string" class="form-control box" name="message" id="message" placeholder=""
-           value="<?= @$data['postcard_data']?->getPostcardMessage() ?>"
+           value="<?= @$data['postcards']?->getPostcardMessage() ?>"
 </div>
     <p></p>
     <button type="submit">Submit</button>

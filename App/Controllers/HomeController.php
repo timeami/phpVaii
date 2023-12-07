@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Core\AControllerBase;
 use App\Core\Responses\Response;
+use App\Models\Contact;
+use App\Models\Postcard;
 
 /**
  * Class HomeController
@@ -43,5 +45,16 @@ class HomeController extends AControllerBase
     public function shop(): Response
     {
         return $this->html();
+    }
+
+
+    public function admin() : Response
+    {
+        return $this->html(
+            [
+                'contacts' => Contact::getAll()
+                #'#postcards' => Postcard::getAll()
+            ]
+        );
     }
 }

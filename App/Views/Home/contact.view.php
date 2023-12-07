@@ -23,8 +23,8 @@
     <?php endforeach; ?>
 <?php endif; ?>
 
-<form method="post" action="<?= $link->url('contact') ?>" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?= @$data['contact_message']?->getId() ?>">
+<form method="post" action="<?= $link->url('contact.SAVE') ?>" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?= @$data['contact']?->getId() ?>">
 
 <div class="container">
     <div class="row">
@@ -48,25 +48,25 @@
                     <div class="form-group">
                         <label for="name">Your Name:</label>
                         <input type="text" id="name" name="name" required
-                               value="<?= @$data['contact_messsage']?->getName() ?>">
+                               value="<?= @$data['contact']?->getName() ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Your Email:</label>
                         <input type="email" id="email" name="email" required
-                               value="<?= @$data['contact_messsage']?->getEmail() ?>">
+                               value="<?= @$data['contact']?->getEmail() ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="subject">Subject:</label>
                         <input type="text" id="subject" name="subject" required
-                               value="<?= @$data['contact_messsage']?->getSubject() ?>">
+                               value="<?= @$data['contact']?->getSubject() ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="message">Message:</label>
                         <textarea id="message" name="message" rows="4" required
-                                  value="<?= @$data['contact_messsage']?->getMessage() ?>"></textarea>
+                                  value="<?= @$data['contact']?->getMessage() ?>"></textarea>
                     </div>
 
                     <button type="submit">Submit</button>

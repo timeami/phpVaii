@@ -1,14 +1,16 @@
 <?php
+namespace App\Models;
 
-class PostcardData
+use App\Core\Model;
+class Postcard extends Model
 {
     protected ?int $id = null;
-    protected ?string $name ;
-    protected ?string $address_line1;
-    protected ?string $address_line2;
-    protected ?string $city;
-    protected ?int $zip_code;
-    protected ?string $postcard_message;
+    protected string $name ;
+    protected string $address_line1;
+    protected ?string $address_line2 = null;
+    protected string $city;
+    protected string $zip_code;
+    protected string $message;
 
     public function getId(): ?int
     {
@@ -60,24 +62,24 @@ class PostcardData
         $this->city = $city;
     }
 
-    public function getZipCode(): ?int
+    public function getZipCode(): ?string
     {
         return $this->zip_code;
     }
 
-    public function setZipCode(?int $zip_code): void
+    public function setZipCode(?string $zip_code): void
     {
         $this->zip_code = $zip_code;
     }
 
-    public function getPostcardMessage(): ?string
+    public function getMessage(): ?string
     {
-        return $this->postcard_message;
+        return $this->message;
     }
 
-    public function setPostcardMessage(?string $postcard_message): void
+    public function setMessage(?string $message): void
     {
-        $this->postcard_message = $postcard_message;
+        $this->message = $message;
     }
 
 

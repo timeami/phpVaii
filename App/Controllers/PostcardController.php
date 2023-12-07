@@ -7,11 +7,10 @@ use App\Core\HTTPException;
 use App\Core\Responses\RedirectResponse;
 use App\Core\Responses\Response;
 use App\Helpers\FileStorage;
-use App\Models\Contact;
+use App\Models\Postcard;
 
-class ContactController extends AControllerBase
+class PostcardController extends AControllerBase
 {
-
     public function index(): Response
     {
         return $this->html();
@@ -24,18 +23,18 @@ class ContactController extends AControllerBase
             case 'delete' :
                 // get id of post to check
                 $id = (int)$this->request()->getValue("id");
-                // get contact from db
-                $contactToCheck = Contact::getOne($id);
+                // get Postcard from db
+                $postcardToCheck = Postcard::getOne($id);
                 // check if the logged login is the same as the post author
                 // if yes, he can edit and delete post
-                return $contactToCheck->getName() == $this->app->getAuth()->getLoggedUserName();
+                return $postcardToCheck->getName() == $this->app->getAuth()->getLoggedUserName();
             case 'save':
                 // get id of post to check
                 $id = (int)$this->request()->getValue("id");
                 if ($id > 0 ) {
                     // only author can save the edited post
-                    $contactToCheck = Contact::getOne($id);
-                    return $contactToCheck->getName()() == $this->app->getAuth()->getLoggedUserName();
+                    $postcardToCheck = Postcard::getOne($id);
+                    return $postcardToCheck->getName()() == $this->app->getAuth()->getLoggedUserName();
                 } else {
                     // anyone can add a new post
                     return $this->app->getAuth()->isLogged();
@@ -53,15 +52,15 @@ class ContactController extends AControllerBase
     public function edit(): Response
     {
         $id = (int) $this->request()->getValue('id');
-        $contact = Contact::getOne($id);
+        $postcard = Postcard::getOne($id);
 
-        if (is_null($contact)) {
+        if (is_null($postcard)) {
             throw new HTTPException(404);
         }
 
         return $this->html(
             [
-                'contacts' => $contact
+                'postcard' => $postcard
             ]
         );
     }
@@ -72,23 +71,23 @@ class ContactController extends AControllerBase
         $oldFileName = "";
 
         if ($id > 0) {
-            $contact = Contact::getOne($id);
-           # $oldFileName = $contact->getPicture();
+            $postcard = Postcard::getOne($id);
+            # $oldFileName = $Postcard->getPicture();
         } else {
-            $contact = new Contact();
+            $postcard = new Postcard();
         }
-        $contact->setName($this->request()->getValue('name'));
-        $contact->setEmail($this->request()->getValue('email'));
-        $contact->setSubject($this->request()->getValue('subject'));
-        $contact->setMessage($this->request()->getValue('message'));
-        $contact->setName($this->app->getAuth()->getLoggedUserName());
-        $contact->save();
+        $postcard->setName($this->request()->getValue('name'));
+        $postcard->setAddressLine1($this->request()->getValue('address_line1'));
+        $postcard->setAddressLine2($this->request()->getValue('address_line2'));
+        $postcard->setMessage($this->request()->getValue('message'));
+        $postcard->setName($this->app->getAuth()->getLoggedUserName());
+        $postcard->save();
 
         $formErrors = $this->formErrors();
         if (count($formErrors) > 0) {
             return $this->html(
                 [
-                    'contact' => $contact,
+                    'postcard' => $postcard,
                     'errors' => $formErrors
                 ], 'add'
             );
@@ -97,8 +96,8 @@ class ContactController extends AControllerBase
                 FileStorage::deleteFile($oldFileName);
             }
             $newFileName = FileStorage::saveFile($this->request()->getFiles()['picture']);
-            #$contact->setPicture($newFileName);
-            $contact->save();
+            #$Postcard->setPicture($newFileName);
+            $postcard->save();
             return new RedirectResponse($this->url("home.index"));
         }
     }
@@ -106,13 +105,13 @@ class ContactController extends AControllerBase
     public function delete()
     {
         $id = (int) $this->request()->getValue('id');
-        $contact = Contact::getOne($id);
+        $postcard = Postcard::getOne($id);
 
-        if (is_null($contact)) {
+        if (is_null($postcard)) {
             throw new HTTPException(404);
         } else {
-            #FileStorage::deleteFile($contact->getPicture());
-            $contact->delete();
+            #FileStorage::deleteFile($Postcard->getPicture());
+            $postcard->delete();
             return new RedirectResponse($this->url("home.index"));
         }
     }
@@ -128,5 +127,7 @@ class ContactController extends AControllerBase
         }
         return $errors;
     }
+
+
 
 }
