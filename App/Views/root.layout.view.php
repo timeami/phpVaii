@@ -14,8 +14,8 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="public/css/styl.css">
-    <script src="public/js/script.js"></script>
+    <link rel="stylesheet" href="/public/css/styl.css">
+    <script src="/public/js/script.js"></script>
 </head>
 <header class="topnav">
     <div class="row">
@@ -23,7 +23,7 @@
             <div class="initCont">
                 <div class="glitch-wrapper">
                     <a class="navbar-brand" href="<?= $link->url("home.index") ?>">
-                        <img id="header-logo" src="public/images/img/logo.png" alt="..." title="<?= \App\Config\Configuration::APP_NAME ?>"
+                        <img id="header-logo" src="/public/images/img/logo.png" alt="..." title="<?= \App\Config\Configuration::APP_NAME ?>"
                              title="<?= \App\Config\Configuration::APP_NAME ?>">
                     </a>
                     <div class="glitch" data-text="Postcool">Postcool</div>
@@ -51,7 +51,7 @@
                         <a class="nav-link" href="<?= $link->url("home.admin") ?>">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $link->url("home.contact") ?>">Contact Us</a>
+                        <a class="nav-link" href="<?= $link->url("home.add") ?>">Contact Us</a>
                     </li>
                 </ul>
             </div>

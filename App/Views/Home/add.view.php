@@ -13,7 +13,7 @@
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="public/css/design.css">
+    <link rel="stylesheet" href="/public/css/design.css">
 </head>
 
 
@@ -23,8 +23,7 @@
     <?php endforeach; ?>
 <?php endif; ?>
 
-<form method="post" action="<?= $link->url('contact.SAVE') ?>" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?= @$data['contact']?->getId() ?>">
+<!--<form method="post" action="--><?php //= $link->url('contact.SAVE') ?><!--" enctype="multipart/form-data">-->
 
 <div class="container">
     <div class="row">
@@ -44,7 +43,9 @@
 
             <div class="contact-form">
                 <h2>Contact Form</h2>
-                <form action="#" method="post">
+                <form action="<?= $link->url('home.save') ?>" method="post">
+                    <input type="hidden" name="id" value="<?= @$data['contact']?->getId() ?>">
+
                     <div class="form-group">
                         <label for="name">Your Name:</label>
                         <input type="text" id="name" name="name" required

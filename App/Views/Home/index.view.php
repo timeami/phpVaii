@@ -11,20 +11,20 @@
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="public/css/design.css">
+    <link rel="stylesheet" href="/public/css/design.css">
 </head>
 <body>
 
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="public/images/img/12%20(1).jpg" class="d-block w-100" alt="...">
+            <img src="/public/images/img/12%20(1).jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="public/images/img/12%20(2).jpg" class="d-block w-100" alt="...">
+            <img src="/public/images/img/12%20(2).jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="public/images/img/12%20(3).jpg" class="d-block w-100" alt="...">
+            <img src="/public/images/img/12%20(3).jpg" class="d-block w-100" alt="...">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -41,7 +41,7 @@
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card text-center">
-                <img src="public/images/img/03.jpg" class="card-img-top" alt="...">
+                <img src="/public/images/img/03.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h2 class="card-title">Our Museum</h2>
                     <a href="#" class="btn btn-sm btn-secondary">Entry Fee List</a>
@@ -52,7 +52,7 @@
 
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card text-center">
-                <img src="public/images/img/06.jpg" class="card-img-top" alt="...">
+                <img src="/public/images/img/06.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h2 class="card-title">New collection</h2>
                     <a href="#" class="btn btn-sm btn-secondary">Coming soon</a>
@@ -67,7 +67,7 @@
 
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card text-center">
-                <img src="public/images/img/05.jpg" class="card-img-top" alt="...">
+                <img src="/public/images/img/05.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h2 class="card-title">Shop Postcards</h2>
                     <a href="<?= $link->url("home.shop") ?>" class="btn btn-sm btn-secondary">Check it out</a>

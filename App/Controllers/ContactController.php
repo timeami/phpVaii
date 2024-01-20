@@ -69,7 +69,7 @@ class ContactController extends AControllerBase
     public function save()
     {
         $id = (int)$this->request()->getValue('id');
-        $oldFileName = "";
+        //$oldFileName = "";
 
         if ($id > 0) {
             $contact = Contact::getOne($id);
@@ -81,8 +81,8 @@ class ContactController extends AControllerBase
         $contact->setEmail($this->request()->getValue('email'));
         $contact->setSubject($this->request()->getValue('subject'));
         $contact->setMessage($this->request()->getValue('message'));
-        $contact->setName($this->app->getAuth()->getLoggedUserName());
-        $contact->save();
+        //$contact->setName($this->app->getAuth()->getLoggedUserName());
+        //$contact->save();
 
         $formErrors = $this->formErrors();
         if (count($formErrors) > 0) {
@@ -93,10 +93,10 @@ class ContactController extends AControllerBase
                 ], 'add'
             );
         } else {
-            if ($oldFileName != "") {
-                FileStorage::deleteFile($oldFileName);
-            }
-            $newFileName = FileStorage::saveFile($this->request()->getFiles()['picture']);
+            //if ($oldFileName != "") {
+            //    FileStorage::deleteFile($oldFileName);
+            //}
+            //$newFileName = FileStorage::saveFile($this->request()->getFiles()['picture']);
             #$contact->setPicture($newFileName);
             $contact->save();
             return new RedirectResponse($this->url("home.index"));
