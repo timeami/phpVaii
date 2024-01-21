@@ -76,7 +76,8 @@ class HomeController extends AControllerBase
             //$newFileName = FileStorage::saveFile($this->request()->getFiles()['picture']);
             #$contact->setPicture($newFileName);
             $contact->save();
-            return new RedirectResponse($this->url("home.index"));
+            return $this->json(["success" => true, "message" => "Form sent"]);
+//            return new RedirectResponse($this->url("home.index"));
         }
     }
 
