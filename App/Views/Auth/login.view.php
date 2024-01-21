@@ -15,6 +15,8 @@ $layout = 'auth';
     <link rel="stylesheet" href="/public/css/design.css">
 </head>
 
+
+<!--form z cviceni-->
 <div class="container">
     <div class="row">
         <div class="col-left"></div>
@@ -24,17 +26,20 @@ $layout = 'auth';
                 <div class="text-center text-danger mb-3">
                     <?= @$data['message'] ?>
                 </div>
-                <form  class="form-signin" method="post" action="<?= $link->url("logged") ?>">
-                    <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required autofocus>
+                <form class="form-signin" method="post" action="<?= $link->url("login") ?>">
+                    <div class="form-label-group mb-3">
+                        <input name="login" type="text" id="login" class="form-control" placeholder="Login"
+                               required autofocus>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                    <div class="form-label-group mb-3">
+                        <input name="password" type="password" id="password" class="form-control"
+                               placeholder="Password" required>
                     </div>
-                    <button class="btn btn-primary" type="submit" name="submit">Log In
-                    </button>
+                    <div class="text-center">
+                        <button class="btn btn-primary" type="submit" name="submit">Prihlásiť
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -49,5 +54,6 @@ $layout = 'auth';
         <div class="footer-column">Terms & Conditions</div>
         <div class="footer-column">Privacy Policy</div>&nbsp;
         <div class="footer">Timea Michalcova 2023</div>
+        <div class="footer"><a href="<?= $link->url("home.index") ?>">Back to the main page</a></div>
     </div>
 </div>

@@ -294,6 +294,39 @@ button {
     max-width: 100%; /* Ensure the image doesn't exceed its container's width */
 }
 
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+}
+
+button {
+    margin-bottom: 20px;
+}
+
+#aboutUsPage {
+    display: none;
+}
+
+#aboutText {
+    max-width: 800px;
+    margin: 25px 50px 75px 100px;
+    text-align: justify;
+}
+
+#photoGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#photoGrid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
 
 /* RWD */
 @media screen and (max-width: 600px) {

@@ -6,7 +6,7 @@ use App\Core\AControllerBase;
 use App\Core\Responses\RedirectResponse;
 use App\Core\Responses\Response;
 use App\Models\Contact;
-use App\Models\Postcard;
+use App\Models\Order;
 
 /**
  * Class HomeController
@@ -97,7 +97,12 @@ class HomeController extends AControllerBase
         return $this->html();
     }
 
-    public function shop(): Response
+    public function order(): Response
+    {
+        return $this->html();
+    }
+
+    public function about(): Response
     {
         return $this->html();
     }
@@ -108,7 +113,7 @@ class HomeController extends AControllerBase
         return $this->html(
             [
                 'contacts' => Contact::getAll()
-                #'#postcards' => Postcard::getAll()
+                #'#postcards' => Order::getAll()
             ]
         );
     }

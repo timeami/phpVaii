@@ -70,7 +70,7 @@
                 <img src="/public/images/img/05.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h2 class="card-title">Shop Postcards</h2>
-                    <a href="<?= $link->url("home.shop") ?>" class="btn btn-sm btn-secondary">Check it out</a>
+                    <a href="<?= $link->url("home.order") ?>" class="btn btn-sm btn-secondary">Check it out</a>
                 </div>
                 <p>Experience the art of communication through postcards. Our collection features postcards that tell stories, convey emotions, and connect people across borders.</p>
             </div>

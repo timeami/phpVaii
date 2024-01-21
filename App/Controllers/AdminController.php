@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Core\AControllerBase;
 use App\Core\Responses\Response;
+use App\Models\Contact;
+use App\Models\Order;
 
 /**
  * Class HomeController
@@ -28,6 +30,9 @@ class AdminController extends AControllerBase
      */
     public function index(): Response
     {
-        return $this->html();
+        return $this->html([
+            'orders' => Order::getAll(),
+            'contacts' => Contact::getAll(),
+        ]);
     }
 }

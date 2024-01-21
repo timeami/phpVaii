@@ -44,14 +44,14 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Our Museum</a>
                             <a class="dropdown-item" href="#">New Collection</a>
-                            <a class="dropdown-item" href="<?= $link->url("home.shop") ?>">Shop Postcards</a>
+                            <a class="dropdown-item" href="<?= $link->url("home.order") ?>">Shop Postcards</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $link->url("home.admin") ?>">About Us</a>
+                        <a class="nav-link" href="<?= $link->url("home.about") ?>">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $link->url("home.add") ?>">Contact Us</a>
+                        <a class="nav-link" href="<?= $link->url("home.contact") ?>">Contact Us</a>
                     </li>
                 </ul>
             </div>

@@ -23,6 +23,11 @@ class AuthController extends AControllerBase
         return $this->redirect(Configuration::LOGIN_URL);
     }
 
+    public function logged(): Response
+    {
+        return $this->redirect(Configuration::LOGIN_URL);
+    }
+
     /**
      * Login a user
      * @return Response

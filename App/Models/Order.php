@@ -2,7 +2,7 @@
 namespace App\Models;
 
 use App\Core\Model;
-class Postcard extends Model
+class Order extends Model
 {
     protected ?int $id = null;
     protected string $name ;
@@ -10,7 +10,7 @@ class Postcard extends Model
     protected ?string $address_line2 = null;
     protected string $city;
     protected string $zip_code;
-    protected string $message;
+    protected string $order;
 
     public function getId(): ?int
     {
@@ -72,14 +72,14 @@ class Postcard extends Model
         $this->zip_code = $zip_code;
     }
 
-    public function getMessage(): ?string
+    public function getOrder(): ?string
     {
-        return $this->message;
+        return $this->order;
     }
 
-    public function setMessage(?string $message): void
+    public function setOrder(?string $order): void
     {
-        $this->message = $message;
+        $this->order = $order;
     }
 
 
