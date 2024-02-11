@@ -90,7 +90,7 @@ class ContactController extends AControllerBase
                 [
                     'contact' => $contact,
                     'errors' => $formErrors
-                ], 'add'
+                ], 'contact'
             );
         } else {
             //if ($oldFileName != "") {

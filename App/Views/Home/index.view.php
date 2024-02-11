@@ -44,7 +44,7 @@
                 <img src="/public/images/img/03.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h2 class="card-title">Our Museum</h2>
-                    <a href="#" class="btn btn-sm btn-secondary">Entry Fee List</a>
+                    <a href=<?= $link->url("home.price") ?> class="btn btn-sm btn-secondary">Entry Fee List</a>
                 </div>
                 <p>Discover a wide collection of vintage postcards from around the world. Our museum is a treasure trove of historical and artistic postcards that will transport you to different eras and places.</p>
             </div>

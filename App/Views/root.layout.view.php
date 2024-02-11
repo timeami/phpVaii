@@ -38,11 +38,11 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Menu
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Our Museum</a>
+                            <a class="dropdown-item" href="<?= $link->url("home.price") ?>">Entry Fees</a>
                             <a class="dropdown-item" href="#">New Collection</a>
                             <a class="dropdown-item" href="<?= $link->url("home.order") ?>">Shop Postcards</a>
                         </div>
